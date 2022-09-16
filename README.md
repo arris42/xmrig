@@ -3,3 +3,5 @@
 Unofficial releases of XMRig miner without donation *(0% dev fee)*
 
 - Original [website](https://github.com/xmrig/xmrig)
+
+> Monero has completed its network hard-fork (July 2022). This change is for _solo_ miners that affected by Monero hard-fork, and not PoW. So regular _pool_ mining is not affected.
