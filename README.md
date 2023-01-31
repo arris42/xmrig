@@ -2,7 +2,7 @@
 
 Unofficial releases of XMRig miner without hashing power donation *(0% dev fee)*. You can manually disable developer fee from source code.
 
-### How?
+### Building from source
 Search for `donate` header file, set `kDefaultDonateLevel` and `kMinimumDonateLevel` to `0`, and then see [Windows build](https://github.com/arris42/xmrig#windows-build) section below for building binaries
 
 Finally, in XMRig folder, disable donation fee from `config.json` by change `donate-level` value to `0`
