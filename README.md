@@ -34,7 +34,7 @@ Now, the time has finally come.. ✨
 - Still opening MSYS2
 - `cd C:\\xmrig-source\\xmrig` (Just to make sure)
 - `mkdir builds && cd builds`
-- `"C:\Program Files\CMake\bin\cmake.exe" .. -G "Unix Makefiles" -DXMRIG_DEPS=C:/xmrig-source/gcc/x64`
+- `"C:\Program Files\CMake\bin\cmake.exe" .. -G "Unix Makefiles" -DXMRIG_DEPS=C:/xmrig-source/xmrig-deps-master/gcc/x64`
 - Now you have compiled xmrig inside `C:\xmrig-source\xmrig\builds`
 
 Finally, edit the `config.json` and change `donate-level` value to `0`
