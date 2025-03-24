@@ -6,10 +6,10 @@ Unofficial XMRig miner windows release without hash power donation *(0% dev fee)
 👉 Just [grab it](https://github.com/arris42/xmrig/releases)
 
 ## Building from source
-If you feel my builds contains StuPiD malware, or you are an amateur *hobbyist* compiler.. Well, follow these steps how to build on windows :
+If you afraid of my builds contains StuPiD malware, or you are a *Hobbyist* compiler.. Well, follow this steps :
 
 ### Prerequisites
-- [CMake](https://cmake.org/download/) Make sure to `add CMake to the system PATH`
+- [CMake](https://cmake.org/download/) Make sure to enable `add CMake to the system PATH`
 - [MSYS](https://github.com/msys2/msys2-installer/releases/)
 - Disable antivirus to prevent any compiling errors (you can enable it again after successful builds)
 > Or.. add xmrig folder to antivirus exclusion instead. If you know what to do
@@ -40,7 +40,7 @@ Still opening MSYS2? Let's continue :
 - `"C:\Program Files\CMake\bin\cmake.exe" .. -G "Unix Makefiles" -DXMRIG_DEPS=C:/xmrig-source/xmrig-deps-master/gcc/x64`
 - `make -j$(nproc)`
 
-> Relax, it takes some time to compile ☕ (depends of your cpu)
+> Relax, it takes some time to compile ☕
 
 Now you have compiled xmrig inside `C:\xmrig-source\xmrig\builds`. Make sure it's not detected by antivirus!
 
