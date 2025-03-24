@@ -1,22 +1,50 @@
 # XMRig
 
-Unofficial releases of XMRig miner without hashing power donation *(0% dev fee)*. You can manually disable developer fee from source code.
+Unofficial XMRig miner windows release without hash power donation *(0% dev fee)*. You need to manually disable donation fee from source code. ✨
 
-### Building from source
-Get the external [source code](https://github.com/xmrig/xmrig). Search for `donate` header file, change variable `kDefaultDonateLevel` and `kMinimumDonateLevel` value to `0`, and then see [Windows build](https://github.com/arris42/xmrig#windows-build) section below for building binary
+## Release builds
+👉 Just [grab it](https://github.com/arris42/xmrig/releases)
 
-Finally, configure `donate-level` value to `0` in `config.json` (if config file is not exist, create manually)
+## Building from source
+If you feel my builds contains stupid malware. Or you are a *hobbyist* compiler, follow these steps how to build on windows :
 
-> Consider making a donation to [developer](https://github.com/xmrig/xmrig#donations) if you are using this binary or disable developer fee
+### Prerequisites
+- [CMake](https://cmake.org/download/) Make sure to `add CMake to the system PATH`
+- [MSYS](https://github.com/msys2/msys2-installer/releases/)
 
-- External [source](https://github.com/xmrig/xmrig)
+### Installing
+Open MSYS2 and execute following commands :
+- `pacman -Syu` (might need to restart afterwards)
+- `pacman -S mingw-w64-ucrt-x86_64-gcc mingw-w64-x86_64-gcc git make unzip`
+- `mkdir C:\\xmrig-source`
+- `cd C:\\xmrig-source`
+- `curl --output xmrig-deps-master.zip https://github.com/xmrig/xmrig-deps/archive/refs/heads/master.zip`
+- `unzip xmrig-deps-master.zip`
+- `git clone https://github.com/xmrig/xmrig.git`
 
-## Windows build
+### Modifying
+> You need external code editor like, sublime or notepad++
+- Go to `C:\xmrig-source\xmrig`
+- Inside `src` folder, look for `donate` header file, and edit it with your favorite code editor.
+- Look for variable `kDefaultDonateLevel` and `kMinimumDonateLevel`. Change both value to `0`
+- Save it!
 
-Make sure to install [MSYS2](https://github.com/msys2/msys2-installer/releases) first, and follow XMRig build [steps](https://xmrig.com/docs/miner/build/windows). There is also MSYS [portable download](https://github.com/msys2/msys2-installer/releases/download/2023-01-27/msys2-base-x86_64-20230127.tar.xz) for advanced user
+### Compiling
+Now, the time has finally come.. ✨
+- Still opening MSYS2
+- `cd C:\\xmrig-source\\xmrig` (Just to make sure)
+- `mkdir builds && cd builds`
+- `"C:\Program Files\CMake\bin\cmake.exe" .. -G "Unix Makefiles" -DXMRIG_DEPS=C:/xmrig-sources/gcc/x64`
+- Now you have compiled xmrig inside `C:\xmrig-source\xmrig\builds`
 
-> You can use Microsoft Visual Studio if you have one and start build them. But if you are just building binaries AND you have slow-performance system, use MSYS2 instead.
+Finally, edit the `config.json` and change `donate-level` value to `0`
 
-## Other platform build
+### Issues
+There are a bunch of MSYS2 shortcuts, like MINGW64, UCRT64, and CLANG64.
 
-Visit [manual page](https://xmrig.com/docs/miner/build) to build XMRig on other platform
+If you encounter some errors when compiling, you might try `MSYS2 MINGW64` instead.
+
+## Other platform
+
+Visit [manual build](https://xmrig.com/docs/miner/build) for more info
+> Optionally, make a donation to [developer](https://github.com/xmrig/xmrig#donations)
